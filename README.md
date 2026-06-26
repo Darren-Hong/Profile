@@ -1,6 +1,6 @@
 # Hi there! 👋
 
-I'm **Darren Hong**, a developer passionate about building efficient systems and diving deep into the fundamentals of computer science.
+I'm **Hong wai siong**, currently a year 2 AI student (bachelor of Computer Science (Hons) (Artificial Intelligence)) in APU. 
 
 ## 🛠 Tech Stack & Tools
 
