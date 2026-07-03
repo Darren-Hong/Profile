@@ -1415,3 +1415,297 @@ section {
 .mark{
   color: blue;
 }
+
+.btn-cyber-cut {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.6rem 1.4rem;
+  font-family: monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ff00ff;
+  background: transparent;
+  border: 1px solid #ff00ff;
+  
+  /* Cuts the bottom-right corner out */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+  
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-cyber-cut:hover {
+  background: #ff00ff;
+  color: #000; /* Inverts color on hover */
+  box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.7);
+}
+
+/* =========================================
+   8. UPGRADED CYBER RESUME COMPONENTS
+   ========================================= */
+
+.resume-wrapper {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Hero Section Resume Button */
+.btn-resume-cyber {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--neon-cyan);
+  background: rgba(0, 229, 255, 0.02);
+  border: 1px solid var(--neon-cyan);
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.1), inset 0 0 5px rgba(0, 229, 255, 0.05);
+}
+
+.btn-resume-cyber::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid var(--neon-cyan);
+  border-top: 2px solid var(--neon-cyan);
+  transition: all 0.3s ease;
+}
+
+.btn-resume-cyber::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--neon-cyan);
+  border-bottom: 2px solid var(--neon-cyan);
+  transition: all 0.3s ease;
+}
+
+.btn-resume-cyber .btn-scanner {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 229, 255, 0.15),
+    transparent
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+}
+
+@keyframes scan-btn {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+.btn-resume-cyber:hover .btn-scanner {
+  animation: scan-btn 1.5s infinite linear;
+}
+
+.btn-resume-cyber:hover {
+  color: #06070b;
+  background: var(--neon-cyan);
+  box-shadow: 0 0 25px var(--neon-cyan-glow), inset 0 0 10px rgba(255, 255, 255, 0.5);
+  text-shadow: none;
+}
+
+.btn-resume-cyber:hover::before,
+.btn-resume-cyber:hover::after {
+  width: 100%;
+  height: 100%;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-resume-cyber .btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.btn-resume-cyber:hover .btn-icon {
+  transform: translateY(-1px) scale(1.1);
+}
+
+.btn-resume-cyber:hover .btn-icon svg {
+  stroke: #06070b;
+}
+
+.btn-resume-cyber .btn-metadata {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  background: var(--neon-cyan-dim);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  color: var(--neon-cyan);
+  transition: all 0.3s ease;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.btn-resume-cyber:hover .btn-metadata {
+  background: rgba(6, 7, 11, 0.15);
+  border-color: rgba(6, 7, 11, 0.3);
+  color: #06070b;
+}
+
+/* Bottom Resume Section - Terminal Card */
+.resume-download-card {
+  max-width: 600px;
+  margin: 3rem auto 1rem auto;
+  background: rgba(6, 7, 11, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--neon-violet-dim);
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px var(--neon-violet-dim);
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-download-card:hover {
+  border-color: var(--neon-violet);
+  box-shadow: 0 15px 40px rgba(189, 0, 255, 0.15), 0 0 25px rgba(189, 0, 255, 0.2);
+}
+
+.resume-download-card .card-header {
+  background: rgba(189, 0, 255, 0.05);
+  border-bottom: 1px solid var(--neon-violet-dim);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--neon-violet);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resume-download-card .card-header::after {
+  content: '● ● ●';
+  color: rgba(189, 0, 255, 0.4);
+  letter-spacing: 2px;
+}
+
+.resume-download-card .card-body {
+  padding: 2rem;
+}
+
+.resume-download-card .meta-code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  background: rgba(3, 4, 6, 0.85);
+  padding: 1.25rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  margin-bottom: 2rem;
+}
+
+.resume-download-card .json-key {
+  color: var(--neon-cyan);
+}
+
+.resume-download-card .json-val {
+  color: var(--neon-violet);
+}
+
+.resume-download-card .download-action-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-resume-cyber-large {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.9rem 2.25rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--neon-violet);
+  background: rgba(189, 0, 255, 0.02);
+  border: 1px solid var(--neon-violet);
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 15px rgba(189, 0, 255, 0.1);
+}
+
+.btn-resume-cyber-large::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid var(--neon-violet);
+  border-top: 2px solid var(--neon-violet);
+  transition: all 0.3s ease;
+}
+
+.btn-resume-cyber-large::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--neon-violet);
+  border-bottom: 2px solid var(--neon-violet);
+  transition: all 0.3s ease;
+}
+
+.btn-resume-cyber-large:hover {
+  color: #06070b;
+  background: var(--neon-violet);
+  box-shadow: 0 0 30px rgba(189, 0, 255, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.5);
+  text-shadow: none;
+}
+
+.btn-resume-cyber-large:hover::before,
+.btn-resume-cyber-large:hover::after {
+  width: 100%;
+  height: 100%;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-resume-cyber-large .download-icon {
+  width: 16px;
+  height: 16px;
+  stroke: var(--neon-violet);
+  transition: all 0.3s ease;
+}
+
+.btn-resume-cyber-large:hover .download-icon {
+  stroke: #06070b;
+  transform: translateY(2px);
+}
+
