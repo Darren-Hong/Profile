@@ -8,12 +8,6 @@ I'm **Hong wai siong**, currently a year 2 AI student (bachelor of Computer Scie
 * **Focus:** Data Structures & Algorithms, Multithreading, System Architecture
 * **Tools:** Git, Visual Studio Code, Linux
 
-## 💻 What I'm Working On
-
-* **Algorithm Optimization:** I enjoy implementing and debugging core algorithms from scratch (e.g., selection sort, bubble sort) to better understand their time complexity and memory overhead.
-* **Multithreading:** Currently exploring concurrent programming to build efficient, resource-safe applications.
-
-
 ## 📫 How to reach me
 
 * **GitHub:** [Darren-Hong](https://github.com/Darren-Hong)
